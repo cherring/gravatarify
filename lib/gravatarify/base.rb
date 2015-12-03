@@ -67,7 +67,7 @@ module Gravatarify
       # @return [String] Protocol and hostname (like <tt>http://www.gravatar.com</tt>), without trailing slash.
       def self.gravatar_host(context, str_hash, secure = false)
         use_https = secure.respond_to?(:call) ? secure.call(context) : secure
-        "#{use_https ? 'https' : 'http'}://#{Gravatarify.subdomain(str_hash)}gravatar.com"
+        "https://#{Gravatarify.subdomain(str_hash)}gravatar.com"
       end
 
       # Builds a query string from all passed in options.
